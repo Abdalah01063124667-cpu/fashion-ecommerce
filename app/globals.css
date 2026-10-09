@@ -1,0 +1,23 @@
+import "@/app/globals.css";
+import { Header } from "@/components/header";
+import { CartDrawer } from "@/components/cart-drawer";
+import { StoreProvider } from "@/components/store-provider";
+
+export const metadata = {
+  title: "Velora | Premium Fashion Store",
+  description: "Modern fashion storefront with curated essentials, premium accessories, and elevated lifestyle pieces.",
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body className="bg-stone-100 text-stone-900 antialiased">
+        <StoreProvider>
+          <Header />
+          <CartDrawer />
+          {children}
+        </StoreProvider>
+      </body>
+    </html>
+  );
+}
